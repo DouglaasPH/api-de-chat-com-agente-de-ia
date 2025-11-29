@@ -10,6 +10,5 @@ agent_service = AgentService()
 
 @router.post("/chat")
 async def calcular_expressao(data: MathMessage):
-    print(data)
     resposta = await agent_service.perguntar(data.message)
-    return { "response": resposta }
+    return {"response": resposta}

@@ -12,7 +12,7 @@ class AgentService:
             model=create_llm(),
             tools=[calcular],
         )
-    
+
     async def perguntar(self, message: str) -> str:
         response = self.agent(message)
         message = response.message["content"][0]["text"]

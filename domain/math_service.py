@@ -3,7 +3,13 @@ import math
 
 class MathService:
     """Lógica de domínio pura: apenas regras de negócio."""
+
     def calcular(self, operacao: str, a: float, b: float):
+        MENSAGEM_INVALIDA = (
+            "Operação inválida. Use soma, subtração, "
+            "multiplicação ou divisão."
+        )
+
         if operacao in ("soma", "+"):
             return a + b
         if operacao in ("subtracao", "-"):
@@ -11,13 +17,14 @@ class MathService:
         if operacao in ("multiplicacao", "*"):
             return a * b
         if operacao in ("divisao", "/"):
-            if b == 0 :
+            if b == 0:
                 return "Erro: divisão por zero."
             return a / b
         if operacao in ("potencia", "**", "pow"):
-            return a ** b
+            return a**b
         if operacao in ("raiz", "sqrt"):
             if a < 0:
                 return "Erro: raiz de número negativo."
             return math.sqrt(a)
-        return "Operação inválida. Use soma, subtração, multiplicação ou divisão."
+
+        return MENSAGEM_INVALIDA

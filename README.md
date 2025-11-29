@@ -162,10 +162,10 @@ Inclui:
 
 # ✅ Requisitos do Case Atendidos
 
-✔ Python ≥ 3.14
-✔ API FastAPI com POST `/chat`
-✔ Modelos e agentes configurados via `.env`
-✔ Strands Agents SDK integrado
-✔ Ferramenta matemática funcionando
-✔ Execução local com Ollama + llama3.1
+✔ Python ≥ 3.14  
+✔ API FastAPI com POST `/chat`  
+✔ Modelos e agentes configurados via `.env`  
+✔ Strands Agents SDK integrado  
+✔ Ferramenta matemática funcionando  
+✔ Execução local com Ollama + llama3.1  
 ✔ Código limpo e organizado

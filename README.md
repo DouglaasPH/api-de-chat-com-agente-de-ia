@@ -23,11 +23,17 @@ domain/
 infrastructure/
     llm_ollama.py            → Integração com o provedor Ollama (cria e configura o modelo de IA usando variáveis do .env)
     settings.py              → Carrega e gerencia variáveis de ambiente usando Pydantic Settings
+tests/
+    conftest.py              → Configura fixtures e setups compartilhados para os testes
+    test_agent_service.py    → Testes do agente de IA (mock do Ollama)
+    test_math_service.py     → Testes da lógica das operações matemáticas
+    test_math_tool.py        → Testes da Math Tool usada pelo agente
 .env.example                 → Exemplo das variáveis de ambiente necessárias
 .gitignore                   → Arquivos e pastas ignorados pelo Git
 main.py                      → Entrada principal da API (FastAPI)
 pyproject.toml               → Configuração do Poetry e dependências
 poetry.lock                  → Versões exatas das dependências instaladas
+pytest.ini                   → Configurações do pytest (marcadores, plugins, etc.)
 README.md                    → Instruções para instalar, rodar e usar o projeto
 
 ```
@@ -156,6 +162,7 @@ Inclui:
 **/__pycache__/
 .venv/
 .cache/
+.pytest_cache/
 ```
 
 ---
@@ -169,3 +176,32 @@ Inclui:
 ✔ Ferramenta matemática funcionando  
 ✔ Execução local com Ollama + llama3.1  
 ✔ Código limpo e organizado
+
+---
+
+## 🧪 Testes
+
+O projeto possui **testes automatizados** para garantir que a lógica da aplicação funcione corretamente.
+
+### 🔹 Testados
+
+- **`domain/math_service.py`** → Operações matemáticas (soma, subtração, multiplicação, divisão, raiz quadrada, potenciação e casos inválidos)
+- **`application/math_tool.py`** → Ferramenta matemática usada pelo agente
+- **`application/agent_service.py`** → Lógica do agente de IA (usando mocks do Ollama)
+
+### 🔹 Rodando os testes
+
+1. Execute todos os testes:
+
+```sh
+poetry run pytest -v
+```
+
+2. Execute apenas uma pasta específica:
+
+```sh
+poetry run pytest tests/domain -v
+poetry run pytest tests/application -v
+```
+
+> Observação: testes de `agent_service.py` usam mocks, então não dependem do modelo Ollama real.

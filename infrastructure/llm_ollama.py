@@ -5,6 +5,7 @@ from infrastructure.settings import settings
 def create_llm():
     """Cria o provider Ollama usando configurações do .env via settings."""
     return ollama.OllamaModel(
-        model=settings.LLM_MODEL,
-        temperature=settings.LLM_TEMPERATURE
+        host=settings.LLM_HOST,
+        model_id=settings.LLM_MODEL,
+        temperature=settings.LLM_TEMPERATURE,
     )

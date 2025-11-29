@@ -5,9 +5,10 @@ class MathService:
     """Lógica de domínio pura: apenas regras de negócio."""
 
     def calcular(self, operacao: str, a: float, b: float):
+        print(operacao, a, b)
         MENSAGEM_INVALIDA = (
             "Operação inválida. Use soma, subtração, "
-            "multiplicação ou divisão."
+            "multiplicação, divisão, raiz quadrada ou potência."
         )
 
         if operacao in ("soma", "+"):

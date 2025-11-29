@@ -39,7 +39,7 @@ def test_potencia(service):
     assert service.calcular("**", 5, 2) == 25
 
 
-def test_raiz(service):
+def test_raiz_quadrada(service):
     assert service.calcular("raiz", 9, None) == 3
     assert service.calcular("sqrt", 16, None) == 4
 

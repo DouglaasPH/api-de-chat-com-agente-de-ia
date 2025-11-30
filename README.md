@@ -45,6 +45,7 @@ README.md                    → Instruções para instalar, rodar e usar o proj
 ## 1. 🔧 Pré-requisitos
 
 - **Python ≥ 3.14**
+- Poetry
 - Ollama instalado
 - Modelo local **llama3.1**
 
@@ -81,8 +82,22 @@ poetry install
 O projeto inclui um arquivo **`.env.example`** com as configurações iniciais necessárias.
 Basta copiá-lo e renomear para **`.env`**:
 
+### Linux / Mac
+
 ```sh
 cp .env.example .env
+```
+
+### Windows (PowerShell)
+
+```powershell
+Copy-Item .env.example .env
+```
+
+### Windows (CMD)
+
+```cmd
+copy .env.example .env
 ```
 
 ---
